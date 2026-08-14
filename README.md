@@ -1,13 +1,22 @@
 # W1 contract suite
 
+> [!IMPORTANT]
+> This source repository is frozen. Its accepted history and migration evidence
+> now live in [`delysis/native-platform`](https://github.com/delysis/native-platform),
+> and no independent feature work lands here. File defects in the
+> [canonical issue tracker](https://github.com/delysis/native-platform/issues)
+> and report vulnerabilities privately through
+> [native-platform Security Advisories](https://github.com/delysis/native-platform/security/advisories/new).
+> This repository remains readable and unarchived through the two-release
+> retirement window.
+
 This is the temporary, packet-owned executable specification accepted by
 `W1-CONTRACTS`. It is not a production runtime kit and grants no authority.
 
 `platform-contracts-v0` contains only versioned serialized data envelopes.
 `platform-contract-testkit` contains test-only adapters and shared semantic
-model tests. Current repositories consume an exact content hash only through
-test code. During W2 these bytes move into `delysis/native-platform`; the
-temporary copies are then retired.
+model tests. During W2 these bytes moved into `delysis/native-platform` and the
+temporary external dependency pins were retired.
 
 Lifecycle conformance also has an ownership-specific compositional surface.
 Its traits are grouped by proof obligation, not by product or runtime. Every
@@ -23,12 +32,11 @@ panic-to-shutdown remain bridge suites; unrelated component-local results
 cannot be combined into those claims. These are test traits only, never a new
 production runtime abstraction.
 
-The durable Wave 1 snapshot is temporarily hosted as
-`delysis/w1-platform-contracts`. Current repositories must consume one exact
-40-character commit revision for test code only; branches and tags are not
-dependency identities. The repository publishes no crates. After W2 imports
-this Git history and replaces every temporary pin with monorepo paths, the
-temporary repository is archived rather than deleted.
+The durable Wave 1 snapshot remains preserved as
+`delysis/w1-platform-contracts`. The repository publishes no crates and is no
+longer an active dependency source. W2 imported its Git history and replaced
+the temporary pins; this source repository remains frozen until the two-release
+retirement criterion permits archival.
 
 The suite deliberately contains no Tauri, product, backend, network,
 filesystem, credential, clock, randomness, or live-authority implementation.
